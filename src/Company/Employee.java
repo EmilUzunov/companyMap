@@ -1,7 +1,7 @@
 package Company;
 
+import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 public class Employee{
 	private String name;
@@ -12,7 +12,7 @@ public class Employee{
 	private Map<Integer, Integer> monthlySalary;
 	
 	public Employee(String name, int age, int salary) {
-		this.monthlySalary = new TreeMap<Integer, Integer>();
+		this.monthlySalary = new HashMap<Integer, Integer>();
 		this.setName(name);
 		this.setAge(age);
 		this.setId();
@@ -92,9 +92,9 @@ public class Employee{
 	
 	public void setMonthlySalary(int salary, int monthNumber){
 		if(monthNumber>0&&monthNumber<=12&&salary>0){
-			Integer s = new Integer(salary);
-			Integer m = new Integer(monthNumber);
-		this.monthlySalary.put(m, s);
+//			Integer s = new Integer(salary);
+//			Integer m = new Integer(monthNumber);
+		this.monthlySalary.put(monthNumber, salary);
 		}
 	}
 	

@@ -1,8 +1,9 @@
 package Company;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
-import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class Company {
@@ -14,7 +15,7 @@ public class Company {
 	public Company(String name) {
 
 		this.setName(name);
-		this.branches = new TreeMap<String, TreeSet<Employee>>();
+		this.branches = new HashMap<String, TreeSet<Employee>>();
 	}
 
 	public String getName() {
@@ -57,7 +58,7 @@ public class Company {
 	}
 
 	public void listAllEmployees(Map<String, TreeSet<Employee>> branches) {
-		TreeSet<Employee> tempEmployees = new TreeSet<Employee>(new CompareEmploeeByName());
+		ArrayList<Employee> tempEmployees = new ArrayList<Employee>();
 		for (String entry : branches.keySet()) {
 			for (Employee emp : branches.get(entry)) {
 				tempEmployees.add(emp);
@@ -70,12 +71,10 @@ public class Company {
 	}
 
 	public void eliminateTheDuplicates(Map<String, TreeSet<Employee>> branches) {
-		HashSet<Employee> tempEmployees = new HashSet<Employee>();
+		TreeSet<Employee> tempEmployees = new TreeSet<Employee>(new CompareEmploeeByName());
 		for (String entry : branches.keySet()) {
 			for (Employee emp : branches.get(entry)) {
-				if (!(branches.entrySet().contains(emp))) {
-					tempEmployees.add(emp);
-				}
+				tempEmployees.add(emp);
 			}
 		}
 		for (Employee e : tempEmployees) {

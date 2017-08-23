@@ -11,7 +11,7 @@ public class Demo {
 		Employee asenIvan = new Employee("Asen Ivan", 30, 880);
 		Employee irina = new Employee("Irina", 28, 800);
 		Employee kris = new Employee("Kris", 31, 830);
-		Employee krisi = new Employee("Kris", 31, 830);
+		Employee krisi = new Employee("Kris", 32, 830);
 		
 		
 		
